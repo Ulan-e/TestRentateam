@@ -14,13 +14,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rep = DataRepository(this)
-        rep.fetchUsers()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe(
-                {data -> Log.d("ulanbek", "From MainActivity " + data)},
-                {err -> Log.d("ulanbek", "Error" + err.message)})
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, HomeFragment())
+            .commit()
 
     }
 }

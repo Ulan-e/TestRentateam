@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="9dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginRight="9dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/user"
+    <data>
+
+        <variable
+            name="user"
+            type="com.ulanapp.testrentateam.data.model.User" />
+
+        <!--<variable name="click" type="" />-->
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Ulan Erkinbaev"
-        android:textSize="19sp" />
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{user.first_name}"
+            android:textSize="19sp" />
 
 
-
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+</layout>
