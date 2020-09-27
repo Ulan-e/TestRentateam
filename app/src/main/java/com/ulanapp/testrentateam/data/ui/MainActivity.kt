@@ -1,8 +1,9 @@
-package com.ulanapp.testrentateam
+package com.ulanapp.testrentateam.data.ui
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.data.DataRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

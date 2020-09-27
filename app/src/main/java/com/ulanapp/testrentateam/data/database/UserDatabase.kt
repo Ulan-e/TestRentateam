@@ -2,7 +2,7 @@ package com.ulanapp.testrentateam.data.database
 
 import android.content.Context
 import androidx.room.*
-import com.ulanapp.testrentateam.data.models.User
+import com.ulanapp.testrentateam.data.model.User
 import io.reactivex.Flowable
 
 @Database(entities = arrayOf(User::class), version = 1)
@@ -25,11 +25,7 @@ abstract class UserDatabase : RoomDatabase() {
             return instance
         }
 
-        fun destroyDataBase() {
-            instance = null
-        }
     }
-
 
 }
 

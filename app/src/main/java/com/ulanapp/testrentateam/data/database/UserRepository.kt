@@ -2,7 +2,7 @@ package com.ulanapp.testrentateam.data.database
 
 import android.content.Context
 import android.util.Log
-import com.ulanapp.testrentateam.data.models.User
+import com.ulanapp.testrentateam.data.model.User
 import io.reactivex.Observable
 
 class UserRepository(private val context: Context)  {
@@ -13,7 +13,8 @@ class UserRepository(private val context: Context)  {
         return db
             ?.usersDao()
             ?.getAll()?.toObservable()
-            ?.doOnNext{(Log.d("ulanbek", "From DB  " + it.toString()))}!!
+            ?.doOnNext{(Log.d("ulanbek", "From DB  " + it.toString()))
+            }!!
     }
 
     fun insertToDb(list: List<User>) {

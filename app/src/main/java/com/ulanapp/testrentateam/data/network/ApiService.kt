@@ -1,8 +1,7 @@
 package com.ulanapp.testrentateam.data.network
 
-import com.ulanapp.testrentateam.data.models.UserResponse
+import com.ulanapp.testrentateam.data.model.UserResponse
 import io.reactivex.Observable
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
