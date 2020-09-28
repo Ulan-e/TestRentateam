@@ -10,21 +10,24 @@ import io.reactivex.schedulers.Schedulers
 
 class HomeViewModel(var repository: DataRepository) : ViewModel() {
 
+    val progress = MutableLiveData<Boolean>()
     val data = MutableLiveData<List<User>>()
 
     init {
-        doSomething()
+        progress.value = true
+        loadData()
     }
 
-    private fun doSomething() {
+    private fun loadData() {
         repository.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
+            .doOnNext({progress.value = false})
             .subscribe(
                 {res ->
                     data.value = res
-                    Log.d("ulanbek", "From MainActivity " + res)},
-                {err -> Log.d("ulanbek", "Error" + err.message)})
+                    Log.d("rentateam", "From MainActivity " + res)},
+                {err -> Log.d("rentateam", "Error" + err.message)})
     }
 
 }

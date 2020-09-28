@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<layout >
+
+    <data>
+        <variable
+            name="homeViewModel"
+            type="com.ulanapp.testrentateam.data.ui.home.HomeViewModel" />
+    </data>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,6 +18,14 @@
         android:layout_margin="5dp">
     </androidx.recyclerview.widget.RecyclerView>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+
     <TextView
         android:id="@+id/error_message"
         android:layout_width="match_parent"
@@ -19,4 +35,5 @@
         android:textSize="17sp"
         android:visibility="gone" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

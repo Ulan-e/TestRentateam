@@ -11,16 +11,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
+import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
+
+    private lateinit var homeFragmentBinding: HomeFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        homeFragmentBinding = HomeFragmentBinding.inflate(inflater, container, false)
+        return homeFragmentBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,6 +38,14 @@ class HomeFragment : Fragment() {
 
         homeViewModel.data.observe(activity!!, Observer { t ->
             setUpAdapter(t)
+        })
+
+        homeViewModel.progress.observe(activity!!, Observer { t ->
+            if(t == true){
+                progress_bar.visibility = View.VISIBLE
+            }else{
+                progress_bar.visibility = View.GONE
+            }
         })
     }
 
