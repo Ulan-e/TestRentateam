@@ -1,13 +1,12 @@
-package com.ulanapp.testrentateam.data.ui
+package com.ulanapp.testrentateam.data.ui.home
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ulanapp.testrentateam.data.model.User
+import com.ulanapp.testrentateam.data.data.model.User
 import com.ulanapp.testrentateam.databinding.UserItemBinding
-import com.ulanapp.testrentateam.databinding.UserItemBindingImpl
 
 class UserAdapter(private var data: List<User>) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
@@ -15,7 +14,9 @@ class UserAdapter(private var data: List<User>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val userBinding = UserItemBinding.inflate(inflater, parent, false)
-        return UserViewHolder(userBinding.root)
+        return UserViewHolder(
+            userBinding.root
+        )
     }
 
     override fun getItemCount(): Int {

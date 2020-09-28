@@ -1,7 +1,7 @@
-package com.ulanapp.testrentateam.data.network
+package com.ulanapp.testrentateam.data.data.network
 
 import android.util.Log
-import com.ulanapp.testrentateam.data.model.User
+import com.ulanapp.testrentateam.data.data.model.User
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

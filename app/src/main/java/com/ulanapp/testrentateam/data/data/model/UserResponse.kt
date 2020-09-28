@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.model
+package com.ulanapp.testrentateam.data.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

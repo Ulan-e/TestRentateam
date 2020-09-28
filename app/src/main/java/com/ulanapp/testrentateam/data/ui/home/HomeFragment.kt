@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.ui
+package com.ulanapp.testrentateam.data.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.DataRepository
-import com.ulanapp.testrentateam.data.model.User
+import com.ulanapp.testrentateam.data.data.DataRepository
+import com.ulanapp.testrentateam.data.data.model.User
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment(){
