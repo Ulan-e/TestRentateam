@@ -16,15 +16,15 @@ data class UserResponse(
 @Entity(tableName = "cachedUsers")
 data class User(
     @PrimaryKey
-    val id: Int,
-    val avatar: String,
-    val email: String,
-    val first_name: String,
-    val last_name: String
+    var id: Int,
+    var avatar: String,
+    var email: String,
+    var first_name: String,
+    var last_name: String
 )
 
 data class Ad(
-    val company: String,
-    val text: String,
-    val url: String
+    var company: String,
+    var text: String,
+    var url: String
 )

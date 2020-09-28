@@ -4,10 +4,8 @@
     <data>
 
         <variable
-            name="user"
-            type="com.ulanapp.testrentateam.data.model.User" />
+            name="user"            type="com.ulanapp.testrentateam.data.model.User" />
 
-        <!--<variable name="click" type="" />-->
     </data>
 
     <androidx.cardview.widget.CardView
@@ -25,4 +23,5 @@
 
 
     </androidx.cardview.widget.CardView>
+
 </layout>
