@@ -13,7 +13,7 @@ import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,19 +26,21 @@ class HomeFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val homeViewModel  = ViewModelProvider(activity!!).get(HomeViewModel::class.java)
-        val repo = DataRepository(activity!!)
-        homeViewModel.setRepo(repo)
-        homeViewModel.doSomething()
+        val repository = DataRepository(activity!!)
+        val homeViewModel = ViewModelProvider(
+            activity!!,
+            HomeViewModelFactory(repository)
+        ).get(HomeViewModel::class.java)
+
         homeViewModel.data.observe(activity!!, Observer { t ->
             setUpAdapter(t)
-        }        )
+        })
     }
 
     private fun setUpAdapter(list: List<User>?) {
         val adapter = UserAdapter(list!!)
         val layoutManager = LinearLayoutManager(activity!!)
-        user_recycler_view.layoutManager  = layoutManager
+        user_recycler_view.layoutManager = layoutManager
         user_recycler_view.adapter = adapter
         adapter.notifyDataSetChanged()
     }

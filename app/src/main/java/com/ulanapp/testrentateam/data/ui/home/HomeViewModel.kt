@@ -8,18 +8,16 @@ import com.ulanapp.testrentateam.data.data.model.User
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(var repository: DataRepository) : ViewModel() {
 
     val data = MutableLiveData<List<User>>()
-    private lateinit var repo: DataRepository
 
-    fun setRepo(repository: DataRepository) {
-        this.repo = repository
+    init {
+        doSomething()
     }
 
-
-    fun doSomething() {
-        repo.fetchUsers()
+    private fun doSomething() {
+        repository.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe(

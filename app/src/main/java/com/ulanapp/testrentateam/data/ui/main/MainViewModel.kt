@@ -9,10 +9,11 @@ import com.ulanapp.testrentateam.data.ui.CallFragmentListener
 
 class MainViewModel(listener: CallFragmentListener) : ViewModel() {
 
-    private var toolbarTitle = MutableLiveData<String>()
+    var toolbarTitle = MutableLiveData<String>()
     private var fragmentCallListener: CallFragmentListener = listener
 
     init {
+        toolbarTitle.value = "HomeFragment"
         this.fragmentCallListener.callFragment("HomeFragment")
     }
 
