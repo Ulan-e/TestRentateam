@@ -16,6 +16,7 @@ import com.ulanapp.testrentateam.project.listeners.OnUserClickListener
 import com.ulanapp.testrentateam.project.ui.BaseFragment
 import com.ulanapp.testrentateam.project.ui.details.DetailsFragment
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.home_fragment.*
 import javax.inject.Inject
 

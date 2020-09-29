@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Schedulers
 
 class ApiRepository(private val usersApi: ReqresApi) {
 
-    fun getFromApi(): Observable<List<User>> {
+    fun retrieveAll(): Observable<List<User>> {
         return usersApi.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())

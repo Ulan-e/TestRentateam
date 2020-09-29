@@ -26,4 +26,5 @@ object NetworkService {
             .build()
         return retrofit.create(ReqresApi::class.java);
     }
+
 }

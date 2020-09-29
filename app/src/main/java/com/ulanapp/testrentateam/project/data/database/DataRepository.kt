@@ -6,30 +6,23 @@ import com.ulanapp.testrentateam.project.data.model.User
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class DataRepository  {
+class DataRepository @Inject constructor(var usersDao: UsersDao) {
 
-    var usersDao: UsersDao
-
-    @Inject
-    constructor(usersDao: UsersDao){
-        this.usersDao = usersDao
-    }
-
-    fun getFromDb(): Observable<List<User>> {
+    fun getAll(): Observable<List<User>> {
         return usersDao
-            ?.getAll()?.toObservable()
+            .getAll().toObservable()
             ?.doOnNext{(Log.d("ulanbek", "From DB  " + it.toString()))
             }!!
     }
 
-    fun insertToDb(list: List<User>) {
+    fun insert(list: List<User>) {
         for (i in list) {
-           usersDao?.insert(i)
+            usersDao.insert(i)
         }
     }
 
-    fun clearDb(){
-        usersDao?.removeAll()
+    fun removeAll(){
+        usersDao.removeAll()
     }
 
 }

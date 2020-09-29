@@ -12,12 +12,12 @@ class UsersRepository @Inject constructor(
     private val apiRepository: ApiRepository
 ) {
 
-    fun fetchUsers(): Observable<List<User>> {
-        val dbObservable = dbRepository.getFromDb()
+    fun mergedResult(): Observable<List<User>> {
+        val dbObservable = dbRepository.getAll()
             .subscribeOn(Schedulers.io())
-        val apiObservable = apiRepository.getFromApi().doOnNext {
-            dbRepository.clearDb()
-            dbRepository.insertToDb(it)
+        val apiObservable = apiRepository.retrieveAll().doOnNext {
+            dbRepository.removeAll()
+            dbRepository.insert(it)
         }
         return Observable.mergeDelayError(apiObservable, dbObservable)
     }
