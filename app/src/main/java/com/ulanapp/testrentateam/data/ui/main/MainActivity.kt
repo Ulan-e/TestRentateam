@@ -7,13 +7,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.ui.CallFragmentListener
+import com.ulanapp.testrentateam.data.listeners.CallFragmentListener
 import com.ulanapp.testrentateam.data.ui.home.HomeFragment
 import com.ulanapp.testrentateam.data.ui.info.InfoFragment
 import com.ulanapp.testrentateam.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), CallFragmentListener {
+class MainActivity : AppCompatActivity(),
+    CallFragmentListener {
 
     val HOME_FRAGMENT = "HomeFragment"
     val INFO_FRAGMENT = "InfoFragment"
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), CallFragmentListener {
         setSupportActionBar(main_toolbar)
         mainViewModel.toolbarTitle.observe(this,
             Observer {
-                if(it == HOME_FRAGMENT)
+                if (it == HOME_FRAGMENT)
                     supportActionBar?.title = "Главная"
                 else
                     supportActionBar?.title = "Инфо"
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), CallFragmentListener {
     private fun getFragmentByTitle(title: String): Fragment {
         return when (title) {
             HOME_FRAGMENT -> HomeFragment()
-            INFO_FRAGMENT-> InfoFragment()
+            INFO_FRAGMENT -> InfoFragment()
             else -> HomeFragment()
         }
     }

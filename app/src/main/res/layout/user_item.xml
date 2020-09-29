@@ -9,7 +9,7 @@
 
         <variable
             name="clickListener"
-            type="com.ulanapp.testrentateam.data.ui.OnUserClickListener" />
+            type="com.ulanapp.testrentateam.data.listeners.OnUserClickListener" />
 
     </data>
 

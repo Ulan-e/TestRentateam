@@ -39,6 +39,6 @@ interface UsersDao {
     fun removeAll()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(user: User):Long
+    fun insert(user: User): Long
 
 }

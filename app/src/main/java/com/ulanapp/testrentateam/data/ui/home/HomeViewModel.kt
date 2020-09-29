@@ -8,13 +8,14 @@ import com.ulanapp.testrentateam.data.data.model.User
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class HomeViewModel(var repository: DataRepository) : ViewModel() {
+class HomeViewModel(private var repository: DataRepository) : ViewModel() {
 
-    val progress = MutableLiveData<Boolean>()
+    val loadingProgress = MutableLiveData<Boolean>()
+    val errorMessage = MutableLiveData<String>()
     val data = MutableLiveData<List<User>>()
 
     init {
-        progress.value = true
+        loadingProgress.value = true
         loadData()
     }
 
@@ -22,12 +23,16 @@ class HomeViewModel(var repository: DataRepository) : ViewModel() {
         repository.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .doOnNext({progress.value = false})
+            .doOnNext({ loadingProgress.value = false })
             .subscribe(
-                {res ->
-                    data.value = res
-                    Log.d("rentateam", "From MainActivity " + res)},
-                {err -> Log.d("rentateam", "Error" + err.message)})
+                { result ->
+                    data.value = result
+                    Log.d("rentateamproject", "HomeViewModel -> Success loading from Data repository" + result)
+                },
+                { error ->
+                    errorMessage.value = error.message
+                    Log.d("rentateamproject", "HomeViewModel -> Error loading from DataRepository" + error.message)
+                })
     }
 
 }

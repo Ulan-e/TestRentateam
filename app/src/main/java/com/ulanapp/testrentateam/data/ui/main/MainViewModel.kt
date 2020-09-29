@@ -5,7 +5,7 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.ui.CallFragmentListener
+import com.ulanapp.testrentateam.data.listeners.CallFragmentListener
 
 class MainViewModel(listener: CallFragmentListener) : ViewModel() {
 

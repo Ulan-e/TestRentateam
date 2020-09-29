@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.ui
+package com.ulanapp.testrentateam.data.listeners
 
 interface CallFragmentListener {
 

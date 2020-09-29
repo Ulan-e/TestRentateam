@@ -11,12 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
+import com.ulanapp.testrentateam.data.listeners.OnUserClickListener
 import com.ulanapp.testrentateam.data.ui.details.DetailsFragment
-import com.ulanapp.testrentateam.data.ui.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : Fragment(), OnUserClickListener {
+class HomeFragment : Fragment(),
+    OnUserClickListener {
 
     private lateinit var homeFragmentBinding: HomeFragmentBinding
 
@@ -43,21 +44,30 @@ class HomeFragment : Fragment(), OnUserClickListener {
             setUpAdapter(t)
         })
 
-        homeViewModel.progress.observe(activity!!, Observer { t ->
-            if(t == true){
+        homeViewModel.loadingProgress.observe(activity!!, Observer { t ->
+            if (t == true) {
                 progress_bar.visibility = View.VISIBLE
-            }else{
+            } else {
                 progress_bar.visibility = View.GONE
+            }
+        })
+
+        homeViewModel.errorMessage.observe(activity!!, Observer { t ->
+            if (!t.isNullOrEmpty()) {
+                homeFragmentBinding.errorMessage.visibility = View.VISIBLE
+                homeFragmentBinding.errorMessage.text = "Error loading data"
             }
         })
     }
 
     private fun setUpAdapter(list: List<User>?) {
-        val adapter = UserAdapter(list!!, this)
-        val layoutManager = LinearLayoutManager(activity!!)
-        user_recycler_view.layoutManager = layoutManager
-        user_recycler_view.adapter = adapter
-        adapter.notifyDataSetChanged()
+        val userAdapter = UserAdapter(list!!, this)
+        val linearLayoutInflater = LinearLayoutManager(activity!!)
+        homeFragmentBinding.userRecyclerView.apply {
+            layoutManager = linearLayoutInflater
+            adapter = userAdapter
+        }
+        userAdapter.notifyDataSetChanged()
     }
 
     override fun onItemClick(user: User) {

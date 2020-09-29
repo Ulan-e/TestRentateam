@@ -1,20 +1,15 @@
 package com.ulanapp.testrentateam.data.ui.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.ui.OnUserClickListener
+import com.ulanapp.testrentateam.data.listeners.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.UserItemBinding
-import kotlinx.android.synthetic.main.user_item.view.*
 
 class UserAdapter(private var data: List<User>,
-private var clickListener: OnUserClickListener) :
+private var clickListener: OnUserClickListener
+) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {

@@ -35,9 +35,9 @@ class DetailsFragment : Fragment() {
     companion object {
         fun newInstance(user: User) = DetailsFragment()
             .apply {
-            arguments = Bundle(2).apply {
-                putParcelable(USER_ARG, user)
+                arguments = Bundle(2).apply {
+                    putParcelable(USER_ARG, user)
+                }
             }
-        }
     }
 }
