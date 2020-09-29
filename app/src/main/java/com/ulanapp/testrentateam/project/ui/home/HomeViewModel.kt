@@ -3,12 +3,12 @@ package com.ulanapp.testrentateam.project.ui.home
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ulanapp.testrentateam.project.data.DataRepository
+import com.ulanapp.testrentateam.project.data.UsersRepository
 import com.ulanapp.testrentateam.project.data.model.User
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class HomeViewModel(private var repository: DataRepository) : ViewModel() {
+class HomeViewModel(private var repository: UsersRepository) : ViewModel() {
 
     val loadingProgress = MutableLiveData<Boolean>()
     val errorMessage = MutableLiveData<String>()

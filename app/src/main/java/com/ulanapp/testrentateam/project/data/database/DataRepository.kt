@@ -4,14 +4,19 @@ import android.content.Context
 import android.util.Log
 import com.ulanapp.testrentateam.project.data.model.User
 import io.reactivex.Observable
+import javax.inject.Inject
 
-class UserRepository(private val context: Context)  {
+class DataRepository  {
 
-    val db = UserDatabase.getAppDataBase(context)
+    var usersDao: UsersDao
+
+    @Inject
+    constructor(usersDao: UsersDao){
+        this.usersDao = usersDao
+    }
 
     fun getFromDb(): Observable<List<User>> {
-        return db
-            ?.usersDao()
+        return usersDao
             ?.getAll()?.toObservable()
             ?.doOnNext{(Log.d("ulanbek", "From DB  " + it.toString()))
             }!!
@@ -19,12 +24,12 @@ class UserRepository(private val context: Context)  {
 
     fun insertToDb(list: List<User>) {
         for (i in list) {
-            db?.usersDao()?.insert(i)
+           usersDao?.insert(i)
         }
     }
 
     fun clearDb(){
-        db?.usersDao()?.removeAll()
+        usersDao?.removeAll()
     }
 
 }

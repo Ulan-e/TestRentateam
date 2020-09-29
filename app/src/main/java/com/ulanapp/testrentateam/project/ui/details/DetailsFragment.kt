@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import com.ulanapp.testrentateam.project.data.model.User
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
 import com.ulanapp.testrentateam.databinding.DetailsFragmentBinding
+import com.ulanapp.testrentateam.project.ui.BaseFragment
+import dagger.android.support.DaggerFragment
 
-class DetailsFragment : Fragment() {
+class DetailsFragment : BaseFragment() {
 
     private val USER_ARG: String? = "user_arg"
 

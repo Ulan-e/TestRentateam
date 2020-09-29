@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ulanapp.testrentateam.R
+import com.ulanapp.testrentateam.project.ui.BaseFragment
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
+import dagger.android.support.DaggerFragment
 
-class InfoFragment : Fragment(){
+class InfoFragment : BaseFragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,

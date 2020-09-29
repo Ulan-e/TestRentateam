@@ -5,21 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.project.data.DataRepository
+import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
+import com.ulanapp.testrentateam.project.data.UsersRepository
 import com.ulanapp.testrentateam.project.data.model.User
 import com.ulanapp.testrentateam.project.listeners.OnUserClickListener
+import com.ulanapp.testrentateam.project.ui.BaseFragment
 import com.ulanapp.testrentateam.project.ui.details.DetailsFragment
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
-import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
+import javax.inject.Inject
 
-class HomeFragment : Fragment(),
+class HomeFragment : BaseFragment(),
     OnUserClickListener {
+
+    @Inject
+    lateinit var repository: UsersRepository
 
     private lateinit var homeFragmentBinding: HomeFragmentBinding
     private lateinit var homeViewModel: HomeViewModel
@@ -38,7 +42,6 @@ class HomeFragment : Fragment(),
 
         (activity as MainActivity).supportActionBar?.title = "Главная"
 
-        val repository = DataRepository(activity!!)
         homeViewModel = ViewModelProvider(
             activity!!,
             HomeViewModelFactory(repository)

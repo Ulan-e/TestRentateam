@@ -6,11 +6,10 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class ApiRepository {
+class ApiRepository(private val usersApi: ReqresApi) {
 
     fun getFromApi(): Observable<List<User>> {
-        val networkService = NetworkService.create()
-        return networkService.fetchUsers()
+        return usersApi.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .flatMap { res ->

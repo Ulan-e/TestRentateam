@@ -7,7 +7,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-interface UsersApi {
+interface ReqresApi {
 
     @GET("api/users")
     fun fetchUsers(): Observable<UserResponse>
@@ -18,12 +18,12 @@ object NetworkService {
 
     private const val BASE_URL = "https://reqres.in/"
 
-    fun create(): UsersApi {
+    fun create(): ReqresApi {
         val retrofit = Retrofit.Builder()
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .build()
-        return retrofit.create(UsersApi::class.java);
+        return retrofit.create(ReqresApi::class.java);
     }
 }
