@@ -3,8 +3,11 @@ package com.ulanapp.testrentateam.data.ui.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ulanapp.testrentateam.data.data.model.User
 import com.ulanapp.testrentateam.data.ui.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.UserItemBinding
@@ -41,3 +44,4 @@ private var clickListener: OnUserClickListener) :
 
     }
 }
+

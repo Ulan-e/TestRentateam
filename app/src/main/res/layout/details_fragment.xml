@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/user_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="5dp"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
+    <data>
 
-    <TextView
-        android:id="@+id/user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Ulan Erkinbaev"
-        android:textSize="20sp" />
+        <variable
+            name="curentUser"
+            type="com.ulanapp.testrentateam.data.data.model.User" />
 
-    <TextView
-        android:id="@+id/user_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:linksClickable="true"
-        android:text="uulanerkinbaev@gmail.com"
-        android:textSize="18sp" />
+    </data>
 
-    <TextView
-        android:id="@+id/error_message"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Error"
-        android:textSize="17sp"
-        android:visibility="gone" />
+        android:orientation="vertical">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"
+            app:errorImage="@{@drawable/ic_info_24}"
+            app:imageUrl="@{curentUser.avatar}" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@{curentUser.first_name}"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:inputType="textEmailAddress"
+            android:linksClickable="true"
+            android:text="@{curentUser.email}"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</layout>

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.ui.DetailsFragment
+import com.ulanapp.testrentateam.data.ui.details.DetailsFragment
 import com.ulanapp.testrentateam.data.ui.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
