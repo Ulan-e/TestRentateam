@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +14,7 @@ import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
 import com.ulanapp.testrentateam.data.listeners.OnUserClickListener
 import com.ulanapp.testrentateam.data.ui.details.DetailsFragment
+import com.ulanapp.testrentateam.data.ui.main.MainActivity
 import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -20,6 +22,7 @@ class HomeFragment : Fragment(),
     OnUserClickListener {
 
     private lateinit var homeFragmentBinding: HomeFragmentBinding
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,29 +36,29 @@ class HomeFragment : Fragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as MainActivity).supportActionBar?.title = "Главная"
+
         val repository = DataRepository(activity!!)
-        val homeViewModel = ViewModelProvider(
+        homeViewModel = ViewModelProvider(
             activity!!,
             HomeViewModelFactory(repository)
         ).get(HomeViewModel::class.java)
         homeFragmentBinding.homeViewModel = homeViewModel
 
-        homeViewModel.data.observe(activity!!, Observer { t ->
-            setUpAdapter(t)
+        homeViewModel.data.observe(activity!!, Observer { users ->
+            setUpAdapter(users)
         })
 
-        homeViewModel.loadingProgress.observe(activity!!, Observer { t ->
-            if (t == true) {
-                progress_bar.visibility = View.VISIBLE
-            } else {
-                progress_bar.visibility = View.GONE
-            }
+        homeViewModel.loadingProgress.observe(activity!!, Observer { progress ->
+            progress_bar.visibility = if (progress == true)
+                View.VISIBLE
+            else
+                View.GONE
         })
 
-        homeViewModel.errorMessage.observe(activity!!, Observer { t ->
-            if (!t.isNullOrEmpty()) {
-                homeFragmentBinding.errorMessage.visibility = View.VISIBLE
-                homeFragmentBinding.errorMessage.text = "Error loading data"
+        homeViewModel.errorMessage.observe(activity!!, Observer { errorMessage ->
+            if (!errorMessage.isNullOrEmpty()) {
+                Toast.makeText(activity!!, "Error loading data", Toast.LENGTH_SHORT).show()
             }
         })
     }

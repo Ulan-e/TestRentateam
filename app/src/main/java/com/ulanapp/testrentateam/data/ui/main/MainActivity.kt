@@ -29,13 +29,6 @@ class MainActivity : AppCompatActivity(),
             DataBindingUtil.setContentView(this, R.layout.activity_main)
         activityBinding.mainViewModel = mainViewModel
         setSupportActionBar(main_toolbar)
-        mainViewModel.toolbarTitle.observe(this,
-            Observer {
-                if (it == HOME_FRAGMENT)
-                    supportActionBar?.title = "Главная"
-                else
-                    supportActionBar?.title = "Инфо"
-            })
 
     }
 

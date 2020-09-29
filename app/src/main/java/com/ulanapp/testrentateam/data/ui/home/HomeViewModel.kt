@@ -27,11 +27,17 @@ class HomeViewModel(private var repository: DataRepository) : ViewModel() {
             .subscribe(
                 { result ->
                     data.value = result
-                    Log.d("rentateamproject", "HomeViewModel -> Success loading from Data repository" + result)
+                    Log.d(
+                        "rentateamproject",
+                        "HomeViewModel -> Success loading from Data repository" + result
+                    )
                 },
                 { error ->
                     errorMessage.value = error.message
-                    Log.d("rentateamproject", "HomeViewModel -> Error loading from DataRepository" + error.message)
+                    Log.d(
+                        "rentateamproject",
+                        "HomeViewModel -> Error loading from DataRepository" + error.message
+                    )
                 })
     }
 

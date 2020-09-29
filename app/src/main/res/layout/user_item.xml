@@ -27,7 +27,6 @@
             android:text="@{user.first_name}"
             android:textSize="19sp" />
 
-
     </androidx.cardview.widget.CardView>
 
 </layout>

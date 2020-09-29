@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ulanapp.testrentateam.R
+import com.ulanapp.testrentateam.data.ui.main.MainActivity
 
 class InfoFragment : Fragment(){
 
@@ -17,5 +18,8 @@ class InfoFragment : Fragment(){
         return inflater.inflate(R.layout.info_fragment, container, false)
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).supportActionBar?.title = "Инфо"
+    }
 }
