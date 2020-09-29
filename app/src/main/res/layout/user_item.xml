@@ -7,12 +7,17 @@
             name="user"
             type="com.ulanapp.testrentateam.data.data.model.User" />
 
+        <variable
+            name="clickListener"
+            type="com.ulanapp.testrentateam.data.ui.OnUserClickListener" />
+
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:onClick="@{() -> clickListener.onItemClick(user)}">
 
         <TextView
             android:id="@+id/user"

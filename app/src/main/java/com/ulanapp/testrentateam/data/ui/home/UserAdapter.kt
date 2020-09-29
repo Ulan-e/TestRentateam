@@ -6,16 +6,19 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ulanapp.testrentateam.data.data.model.User
+import com.ulanapp.testrentateam.data.ui.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.UserItemBinding
+import kotlinx.android.synthetic.main.user_item.view.*
 
-class UserAdapter(private var data: List<User>) :
+class UserAdapter(private var data: List<User>,
+private var clickListener: OnUserClickListener) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val userBinding = UserItemBinding.inflate(inflater, parent, false)
         return UserViewHolder(
-            userBinding.root
+            userBinding
         )
     }
 
@@ -25,10 +28,16 @@ class UserAdapter(private var data: List<User>) :
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = data[position]
-        holder.userBinding?.setUser(user)
+        holder.binding.setUser(user)
+        holder.bind(clickListener)
+
     }
 
-    class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var userBinding: UserItemBinding? = DataBindingUtil.bind<UserItemBinding>(itemView)
+    class UserViewHolder(var binding: UserItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(clickListener: OnUserClickListener){
+            binding.clickListener = clickListener
+        }
+
     }
 }

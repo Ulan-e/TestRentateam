@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.data.data.DataRepository
 import com.ulanapp.testrentateam.data.data.model.User
+import com.ulanapp.testrentateam.data.ui.DetailsFragment
+import com.ulanapp.testrentateam.data.ui.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnUserClickListener {
 
     private lateinit var homeFragmentBinding: HomeFragmentBinding
 
@@ -35,6 +37,7 @@ class HomeFragment : Fragment() {
             activity!!,
             HomeViewModelFactory(repository)
         ).get(HomeViewModel::class.java)
+        homeFragmentBinding.homeViewModel = homeViewModel
 
         homeViewModel.data.observe(activity!!, Observer { t ->
             setUpAdapter(t)
@@ -50,11 +53,19 @@ class HomeFragment : Fragment() {
     }
 
     private fun setUpAdapter(list: List<User>?) {
-        val adapter = UserAdapter(list!!)
+        val adapter = UserAdapter(list!!, this)
         val layoutManager = LinearLayoutManager(activity!!)
         user_recycler_view.layoutManager = layoutManager
         user_recycler_view.adapter = adapter
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onItemClick(user: User) {
+        activity!!.supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, DetailsFragment.newInstance(user))
+            .addToBackStack(null)
+            .commit()
     }
 
 }

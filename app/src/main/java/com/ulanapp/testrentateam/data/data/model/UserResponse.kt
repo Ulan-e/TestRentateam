@@ -1,7 +1,9 @@
 package com.ulanapp.testrentateam.data.data.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 
 data class UserResponse(
@@ -13,6 +15,7 @@ data class UserResponse(
     val total_pages: Int
 )
 
+@Parcelize
 @Entity(tableName = "cachedUsers")
 data class User(
     @PrimaryKey
@@ -21,7 +24,7 @@ data class User(
     var email: String,
     var first_name: String,
     var last_name: String
-)
+) : Parcelable
 
 data class Ad(
     var company: String,
