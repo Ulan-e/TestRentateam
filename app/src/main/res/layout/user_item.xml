@@ -5,11 +5,11 @@
 
         <variable
             name="user"
-            type="com.ulanapp.testrentateam.data.data.model.User" />
+            type="com.ulanapp.testrentateam.project.data.model.User" />
 
         <variable
             name="clickListener"
-            type="com.ulanapp.testrentateam.data.listeners.OnUserClickListener" />
+            type="com.ulanapp.testrentateam.project.listeners.OnUserClickListener" />
 
     </data>
 

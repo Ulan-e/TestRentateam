@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.ui.info
+package com.ulanapp.testrentateam.project.ui.info
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.ui.main.MainActivity
+import com.ulanapp.testrentateam.project.ui.main.MainActivity
 
 class InfoFragment : Fragment(){
 

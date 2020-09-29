@@ -5,7 +5,7 @@
 
         <variable
             name="homeViewModel"
-            type="com.ulanapp.testrentateam.data.ui.home.HomeViewModel" />
+            type="com.ulanapp.testrentateam.project.ui.home.HomeViewModel" />
 
     </data>
 

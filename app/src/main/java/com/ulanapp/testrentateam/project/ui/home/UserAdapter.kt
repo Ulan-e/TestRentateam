@@ -1,10 +1,10 @@
-package com.ulanapp.testrentateam.data.ui.home
+package com.ulanapp.testrentateam.project.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.listeners.OnUserClickListener
+import com.ulanapp.testrentateam.project.data.model.User
+import com.ulanapp.testrentateam.project.listeners.OnUserClickListener
 import com.ulanapp.testrentateam.databinding.UserItemBinding
 
 class UserAdapter(private var data: List<User>,

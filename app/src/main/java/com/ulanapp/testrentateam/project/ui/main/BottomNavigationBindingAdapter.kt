@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.ui.main
+package com.ulanapp.testrentateam.project.ui.main
 
 import androidx.databinding.BindingAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView

@@ -1,8 +1,8 @@
-package com.ulanapp.testrentateam.data.ui.main
+package com.ulanapp.testrentateam.project.ui.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ulanapp.testrentateam.data.listeners.CallFragmentListener
+import com.ulanapp.testrentateam.project.listeners.CallFragmentListener
 
 class MainViewModelFactory(private var listener: CallFragmentListener) : ViewModelProvider.Factory{
 

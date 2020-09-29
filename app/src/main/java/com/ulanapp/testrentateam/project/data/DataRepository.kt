@@ -1,9 +1,9 @@
-package com.ulanapp.testrentateam.data.data
+package com.ulanapp.testrentateam.project.data
 
 import android.content.Context
-import com.ulanapp.testrentateam.data.data.database.UserRepository
-import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.data.network.ApiRepository
+import com.ulanapp.testrentateam.project.data.database.UserRepository
+import com.ulanapp.testrentateam.project.data.model.User
+import com.ulanapp.testrentateam.project.data.network.ApiRepository
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 

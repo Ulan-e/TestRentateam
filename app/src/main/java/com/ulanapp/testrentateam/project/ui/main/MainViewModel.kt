@@ -1,10 +1,10 @@
-package com.ulanapp.testrentateam.data.ui.main
+package com.ulanapp.testrentateam.project.ui.main
 
 import android.view.MenuItem
 import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.listeners.CallFragmentListener
+import com.ulanapp.testrentateam.project.listeners.CallFragmentListener
 
 class MainViewModel(listener: CallFragmentListener) : ViewModel() {
 

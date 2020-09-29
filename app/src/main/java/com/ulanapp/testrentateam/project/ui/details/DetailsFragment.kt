@@ -1,12 +1,12 @@
-package com.ulanapp.testrentateam.data.ui.details
+package com.ulanapp.testrentateam.project.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.ui.main.MainActivity
+import com.ulanapp.testrentateam.project.data.model.User
+import com.ulanapp.testrentateam.project.ui.main.MainActivity
 import com.ulanapp.testrentateam.databinding.DetailsFragmentBinding
 
 class DetailsFragment : Fragment() {

@@ -1,15 +1,14 @@
-package com.ulanapp.testrentateam.data.ui.main
+package com.ulanapp.testrentateam.project.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.listeners.CallFragmentListener
-import com.ulanapp.testrentateam.data.ui.home.HomeFragment
-import com.ulanapp.testrentateam.data.ui.info.InfoFragment
+import com.ulanapp.testrentateam.project.listeners.CallFragmentListener
+import com.ulanapp.testrentateam.project.ui.home.HomeFragment
+import com.ulanapp.testrentateam.project.ui.info.InfoFragment
 import com.ulanapp.testrentateam.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 

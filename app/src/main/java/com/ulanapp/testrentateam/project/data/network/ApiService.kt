@@ -1,6 +1,6 @@
-package com.ulanapp.testrentateam.data.data.network
+package com.ulanapp.testrentateam.project.data.network
 
-import com.ulanapp.testrentateam.data.data.model.UserResponse
+import com.ulanapp.testrentateam.project.data.model.UserResponse
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

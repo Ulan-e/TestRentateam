@@ -1,8 +1,8 @@
-package com.ulanapp.testrentateam.data.data.database
+package com.ulanapp.testrentateam.project.data.database
 
 import android.content.Context
 import androidx.room.*
-import com.ulanapp.testrentateam.data.data.model.User
+import com.ulanapp.testrentateam.project.data.model.User
 import io.reactivex.Flowable
 
 @Database(entities = arrayOf(User::class), version = 1)

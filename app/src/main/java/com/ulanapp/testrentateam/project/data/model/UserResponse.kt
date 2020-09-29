@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.data.model
+package com.ulanapp.testrentateam.project.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity

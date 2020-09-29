@@ -1,12 +1,9 @@
-package com.ulanapp.testrentateam.data.ui.details
+package com.ulanapp.testrentateam.project.ui.details
 
 import android.graphics.drawable.Drawable
-import android.view.View
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class ProfileImageAdapter {
 

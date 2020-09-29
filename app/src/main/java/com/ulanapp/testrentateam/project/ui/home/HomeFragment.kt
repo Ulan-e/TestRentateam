@@ -1,4 +1,4 @@
-package com.ulanapp.testrentateam.data.ui.home
+package com.ulanapp.testrentateam.project.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +10,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ulanapp.testrentateam.R
-import com.ulanapp.testrentateam.data.data.DataRepository
-import com.ulanapp.testrentateam.data.data.model.User
-import com.ulanapp.testrentateam.data.listeners.OnUserClickListener
-import com.ulanapp.testrentateam.data.ui.details.DetailsFragment
-import com.ulanapp.testrentateam.data.ui.main.MainActivity
+import com.ulanapp.testrentateam.project.data.DataRepository
+import com.ulanapp.testrentateam.project.data.model.User
+import com.ulanapp.testrentateam.project.listeners.OnUserClickListener
+import com.ulanapp.testrentateam.project.ui.details.DetailsFragment
+import com.ulanapp.testrentateam.project.ui.main.MainActivity
 import com.ulanapp.testrentateam.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
