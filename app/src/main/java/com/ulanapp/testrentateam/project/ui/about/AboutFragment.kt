@@ -8,7 +8,7 @@ import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.project.ui.BaseFragment
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
 
-class InfoFragment : BaseFragment(){
+class AboutFragment : BaseFragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,

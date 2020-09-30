@@ -7,6 +7,7 @@ import com.ulanapp.testrentateam.R
 class BottomNavigationBindingAdapter {
 
     companion object{
+
         @BindingAdapter("onItemSelected")
         @JvmStatic
         fun setNavigationClickListener(view: BottomNavigationView, listener: BottomNavigationView.OnNavigationItemSelectedListener){

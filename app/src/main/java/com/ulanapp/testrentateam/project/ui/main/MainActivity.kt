@@ -9,7 +9,7 @@ import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.databinding.ActivityMainBinding
 import com.ulanapp.testrentateam.project.listeners.CallFragmentListener
 import com.ulanapp.testrentateam.project.ui.home.HomeFragment
-import com.ulanapp.testrentateam.project.ui.info.InfoFragment
+import com.ulanapp.testrentateam.project.ui.about.AboutFragment
 import com.ulanapp.testrentateam.project.utils.isNetworkAvailable
 import dagger.android.AndroidInjection
 import dagger.android.support.DaggerAppCompatActivity
@@ -48,7 +48,7 @@ class MainActivity : DaggerAppCompatActivity(),
     private fun getFragmentByTitle(title: String): Fragment {
         return when (title) {
             HOME_FRAGMENT -> HomeFragment()
-            INFO_FRAGMENT -> InfoFragment()
+            INFO_FRAGMENT -> AboutFragment()
             else -> HomeFragment()
         }
     }

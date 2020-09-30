@@ -1,7 +1,6 @@
 package com.ulanapp.testrentateam.project.data
 
 import com.ulanapp.testrentateam.project.data.database.Repository
-import com.ulanapp.testrentateam.project.data.database.RoomRepository
 import com.ulanapp.testrentateam.project.data.model.User
 import com.ulanapp.testrentateam.project.data.network.ApiRepository
 import io.reactivex.Observable
@@ -13,6 +12,7 @@ class UsersRepository @Inject constructor(
     private val apiRepository: ApiRepository
 ) {
 
+    // returns Observable result of merging two Observables if one of them terminates without onError()
     fun mergeResult(): Observable<List<User>> {
         val dbObservable = dbRepository.getAll()
             .subscribeOn(Schedulers.io())

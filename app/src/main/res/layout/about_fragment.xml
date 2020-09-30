@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:layout_margin="10dp"
-        android:text="Тестовое задание Rentateam"
+        android:text="Тестовое задание для Rentateam"
         android:textSize="18sp">
     </TextView>
 
