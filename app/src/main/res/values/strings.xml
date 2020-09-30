@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestRentateam</string>
+    <string name="empty_space">\u0020</string>
 </resources>

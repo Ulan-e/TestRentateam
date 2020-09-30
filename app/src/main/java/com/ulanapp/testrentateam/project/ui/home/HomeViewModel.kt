@@ -25,7 +25,7 @@ class HomeViewModel(private var repository: UsersRepository) : ViewModel() {
 
     private fun loadData() {
         disposable.add(
-            repository.mergedResult()
+            repository.mergeResult()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .doOnNext({ loadingProgress.value = false })

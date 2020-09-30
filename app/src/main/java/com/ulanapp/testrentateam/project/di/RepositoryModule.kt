@@ -3,7 +3,8 @@ package com.ulanapp.testrentateam.project.di
 import androidx.room.Room
 import com.ulanapp.testrentateam.project.BaseApplication
 import com.ulanapp.testrentateam.project.data.UsersRepository
-import com.ulanapp.testrentateam.project.data.database.DataRepository
+import com.ulanapp.testrentateam.project.data.database.Repository
+import com.ulanapp.testrentateam.project.data.database.RoomRepository
 import com.ulanapp.testrentateam.project.data.database.UserDatabase
 import com.ulanapp.testrentateam.project.data.network.ApiRepository
 import com.ulanapp.testrentateam.project.data.network.NetworkService
@@ -20,8 +21,8 @@ class RepositoryModule {
         .build()
 
     @Provides
-    fun provideUsersDao(database: UserDatabase): DataRepository {
-        return DataRepository(database.usersDao())
+    fun provideDatabaseRepository(database: UserDatabase): Repository {
+        return RoomRepository(database.usersDao())
     }
 
     @Provides
@@ -30,7 +31,7 @@ class RepositoryModule {
     }
 
     @Provides
-    fun provideUsersRepository(database: DataRepository, api: ApiRepository): UsersRepository {
+    fun provideUsersRepository(database: Repository, api: ApiRepository): UsersRepository {
         return UsersRepository(database, api)
     }
 

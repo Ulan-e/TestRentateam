@@ -2,19 +2,20 @@ package com.ulanapp.testrentateam.project.data.network
 
 import android.util.Log
 import com.ulanapp.testrentateam.project.data.model.User
+import com.ulanapp.testrentateam.project.utils.TAG
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class ApiRepository(private val usersApi: ReqresApi) {
+class ApiRepository(private val reqresApi: ReqresApi) {
 
     fun retrieveAll(): Observable<List<User>> {
-        return usersApi.fetchUsers()
+        return reqresApi.fetchUsers()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
-            .flatMap { res ->
-                Log.d("ulanbek", "From API " + res.data)
-                Observable.just(res.data)
+            .flatMap { response ->
+                Log.d(TAG, "Fetch data from API " + response.data)
+                Observable.just(response.data)
             }
     }
 

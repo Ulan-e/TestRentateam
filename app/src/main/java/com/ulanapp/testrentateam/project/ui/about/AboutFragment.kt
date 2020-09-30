@@ -1,14 +1,12 @@
-package com.ulanapp.testrentateam.project.ui.info
+package com.ulanapp.testrentateam.project.ui.about
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.ulanapp.testrentateam.R
 import com.ulanapp.testrentateam.project.ui.BaseFragment
 import com.ulanapp.testrentateam.project.ui.main.MainActivity
-import dagger.android.support.DaggerFragment
 
 class InfoFragment : BaseFragment(){
 
@@ -17,7 +15,7 @@ class InfoFragment : BaseFragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.info_fragment, container, false)
+        return inflater.inflate(R.layout.about_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
