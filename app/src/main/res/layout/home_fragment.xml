@@ -2,11 +2,9 @@
 <layout>
 
     <data>
-
         <variable
             name="homeViewModel"
-            type="com.ulanapp.testrentateam.project.ui.home.HomeViewModel" />
-
+            type="com.ulanapp.mvvm.project.ui.home.HomeViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,7 +23,5 @@
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:visibility="gone" />
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

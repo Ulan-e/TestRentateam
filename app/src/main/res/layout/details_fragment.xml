@@ -2,11 +2,9 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="curentUser"
-            type="com.ulanapp.testrentateam.project.data.model.User" />
-
+            type="com.ulanapp.mvvm.project.data.model.User" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,6 +38,5 @@
             android:linksClickable="true"
             android:text="@{curentUser.email}"
             android:textSize="18sp" />
-
     </LinearLayout>
 </layout>

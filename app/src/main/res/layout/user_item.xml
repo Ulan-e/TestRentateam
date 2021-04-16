@@ -2,14 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="user"
-            type="com.ulanapp.testrentateam.project.data.model.User" />
+            type="com.ulanapp.mvvm.project.data.model.User" />
 
         <variable
             name="clickListener"
-            type="com.ulanapp.testrentateam.project.listeners.OnUserClickListener" />
+            type="com.ulanapp.mvvm.project.listeners.OnUserClickListener" />
 
     </data>
 
@@ -28,5 +27,4 @@
             android:textSize="19sp" />
 
     </androidx.cardview.widget.CardView>
-
 </layout>
